@@ -126,6 +126,19 @@ ________________________________________________________________________________
 pip install super-gradients
 ```
 
+✅补充 适应torch2.0+
+```bash
+1、修改 src/super_gradients/training/utils/checkpoint_utils.py  1592行
+改成 unique_filename = url.split("https://sg-hub-nv.s3.amazonaws.com/models/")[1].replace("/", "_").replace(" ", "_")
+
+2、修改 src/super_gradients/training/utils/weight_averaging_utils.py 132行
+加上 weights_only=False
+
+安装： pip install git+https://github.com/wucng/super-gradients.git
+```
+
+
+
 ## What's New
 
 __________________________________________________________________________________________________________
